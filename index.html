@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Consulta e Armazenamento de Endereços</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+        <img src="src/o.png" alt="Logo" class="header-logo">
+        <h1>RotasBus</h1>
+    </header>
+    
+    <div class="main-container">
+        <div class="left-side">
+            <h1>Consultar Endereço</h1>
+            <h2 class="subtitulo">Sistema para consulta e armazenamento, ideal para otimizar o gerenciamento de rotas de ônibus.</h2>
+
+            <div class="search-container">
+                <input type="text" id="cep" placeholder="Digite seu CEP" onkeyup="verificarEnter(event)">
+                <button class="search-icon" onclick="buscarEndereco()">
+                    <i class="fa fa-search"></i> 
+                </button>
+            </div>
+            
+            <div id="resultadoEndereco"></div>
+
+            <div class="illustrative-image">
+                <img src="src/oni.jpg" alt="Ilustração de CEP" width="90%" />
+            </div>
+        </div>
+
+        <div class="container">
+            <div>
+                <h2>Histórico de Endereços Armazenados</h2>
+                <h3 class="subtitulo">Veja a lista de endereços para facilitar sua rota em todo país! </h3>
+
+                <select id="ordenar" onchange="ordenarLista()">
+                    <option value="cidade">Ordenar por Cidade</option>
+                    <option value="bairro">Ordenar por Bairro</option>
+                    <option value="estado">Ordenar por Estado</option>
+                </select>
+
+                <ul id="listaEnderecos"></ul>
+                
+                <div id="paginacao"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
